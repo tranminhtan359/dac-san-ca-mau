@@ -1,0 +1,45 @@
+                             <h2>Thương Hiệu</h2>
+                             <div class="panel-group category-products" id="accordian">
+                                 <!--category-productsr-->
+                                 <div class="panel panel-default">
+                                     <?php foreach ($manufacture->getAllManufactures() as $value) { ?>
+                                         <div class="panel-heading">
+                                             <h4 class="panel-title"><a href="cate.php?manu_id=<?php echo $value['manu_id'] ?>"><?php echo $value['manu_name'] ?></a>
+                                             </h4>
+                                         </div>
+                                     <?php } ?>
+                                 </div>
+                             </div>
+                                                         <h2>Thương Hiệu</h2>
+                            <div class="panel-group category-products" id="accordian">
+                                <!--category-productsr-->
+                                <div class="panel panel-default">
+                                    <?php foreach ($manufacture->getAllManufactures() as $value) { ?>
+                                        <div class="panel-heading">
+                                            <h4 class="panel-title"><a href="cate.php?manu_id=<?php echo $value['manu_id'] ?>"><?php echo $value['manu_name'] ?></a>
+                                            </h4>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            //cate
+                                                                        <h5 style="color: #ff4757;width: 32%;border-bottom: 1px double #ff6b81;margin-left: 70px;">Thương hiệu</h5>
+                                            <?php
+                                            foreach ($brand_query_run as $brandList) {
+                                                //echo $brandList['name'];
+                                                $checked = [];
+                                                if (isset($_GET['brands'])) {
+                                                    $checked = $_GET['brands'];
+                                                }
+                                            ?>
+                                                <div>
+
+                                                    <input style="margin-left: 70px;margin-right: 10px;" type="checkbox" name="brands[]" value="<?= $brandList['manu_id']; ?>">
+                                                    <?php if (in_array($brandList['manu_id'], $checked)) {
+                                                        echo "";
+                                                    } ?>
+                                                    <?= $brandList['manu_name']; ?>
+                                                </div>
+                                            <?php
+                                            }
+                                            ?> 
